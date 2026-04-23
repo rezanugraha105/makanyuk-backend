@@ -33,7 +33,7 @@ const routes = (handler) => [
     },
     {
         method: 'GET',
-        path: '/reviews/{params*}',
+        path: '/reviews/images/{param*}',
         handler: {
             directory: {
                 path: path.resolve(__dirname, 'file'),

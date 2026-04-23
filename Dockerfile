@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8080
 
 # Jalankan perintah start dari package.json
-CMD ["npm", "start-dev"]
+CMD ["npm", "start"]

@@ -6,7 +6,9 @@ const { mappingDBfoodReviews } = require('../../utils/index');
 
 class FoodReviewsService {
     constructor() {
-        this._pool = new Pool();
+        this._pool = new Pool({
+            ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
+        });
     }
 
     async addReview(userId, {title, description, photoUrl, rating, lat, lon }) {

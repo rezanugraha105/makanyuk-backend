@@ -14,7 +14,7 @@ const init = async () => {
         host: '0.0.0.0',
         routes: {
             cors: {
-                origin: ['*'],
+                origin: ['https://makanyuk-frontend.vercel.app', 'http://localhost:8080'], 
                 headers: ['Accept', 'Authorization', 'Content-Type', 'If-None-Match'],
                 additionalHeaders: ['cache-control', 'x-requested-with'],
                 credentials: true

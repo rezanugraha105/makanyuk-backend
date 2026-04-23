@@ -10,11 +10,13 @@ const plugins = require('./plugins/plugins');
 
 const init = async () => {
     const server = Hapi.server({
-        port: config.app.port,
-        host: config.app.host,
+        // Gunakan process.env.PORT atau 8080 sebagai cadangan
+        port: process.env.PORT || 8080, 
+        // Hapi perlu mendengarkan semua IP (0.0.0.0) jika di-deploy ke container
+        host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0', 
         routes: {
             cors: {
-                origin: ['*'],
+                origin: ['*'], // Jangan lupa izinkan CORS agar frontend bisa akses
             },
         },
     });

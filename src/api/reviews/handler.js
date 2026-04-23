@@ -18,7 +18,7 @@ class FoodReviewsHandler {
         this._validator.validateImageHeaders(photoUrl.hapi.headers);
 
         const filename = await this._storageService.writeFile(photoUrl, photoUrl.hapi);
-        const fileLocation = `${config.app.host}:${config.app.port}/reviews/images/${filename}`;
+        const fileLocation = `https://${config.app.host}:${config.app.port}/reviews/images/${filename}`;
 
         const newReview = await this._foodReviewsService.addReview(credentialId, { title, description, photoUrl: fileLocation, rating, lat, lon });
 

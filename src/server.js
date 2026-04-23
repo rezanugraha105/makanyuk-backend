@@ -15,6 +15,9 @@ const init = async () => {
         routes: {
             cors: {
                 origin: ['*'],
+                headers: ['Accept', 'Authorization', 'Content-Type', 'If-None-Match'],
+                additionalHeaders: ['cache-control', 'x-requested-with'],
+                credentials: true
             },
         },
     });
